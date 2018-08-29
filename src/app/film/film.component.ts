@@ -16,7 +16,7 @@ export class FilmComponent implements OnInit, OnDestroy {
   public filmsSearch: SearchFilm[];
   public films: SearchFilm[];
   private sub: Subscription;
-  private stateCtrl = new FormControl();
+  public stateCtrl = new FormControl();
 
   public searchChange = new Subject<string>();
 
