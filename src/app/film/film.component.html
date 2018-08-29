@@ -22,7 +22,10 @@
       <h3 class="title">{{film.Title}}</h3>
       <span class="genre">{{film.Type}}</span>
       <p class="year">Год: {{film.Year}}</p>
-      <button  mat-raised-button [routerLink]="['/film-detail', film.imdbID]">Подробнее</button>
+      <div class="actions">
+        <button  mat-raised-button [routerLink]="['/film-detail', film.imdbID]">Подробнее</button>
+        <button mat-raised-button (click)="removeFilm(film)" color="warn">Удалить</button>
+      </div>
     </div>
   </div>
 </section>

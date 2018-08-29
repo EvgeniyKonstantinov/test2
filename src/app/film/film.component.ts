@@ -55,6 +55,11 @@ export class FilmComponent implements OnInit, OnDestroy {
     this.stateCtrl.setValue('');
   }
 
+  public removeFilm(film: SearchFilm) {
+    this.films.splice(this.films.indexOf(film), 1);
+    this.store.SaveFilms(this.films);
+  }
+
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
