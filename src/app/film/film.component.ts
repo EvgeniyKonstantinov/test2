@@ -4,6 +4,7 @@ import { debounceTime } from 'rxjs/operators';
 import { Subject, Subscription } from 'rxjs';
 import { SearchFilm } from '../shared/types/searchFirm.response';
 import { FindFilmService } from '../core/find-film.service';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-film',
@@ -15,6 +16,7 @@ export class FilmComponent implements OnInit, OnDestroy {
   public filmsSearch: SearchFilm[];
   public films: SearchFilm[];
   private sub: Subscription;
+  private stateCtrl = new FormControl();
 
   public searchChange = new Subject<string>();
 
@@ -39,7 +41,6 @@ export class FilmComponent implements OnInit, OnDestroy {
       if (item.length > 0) {
         this.filmService.searchFilms(item).subscribe(films => {
           this.filmsSearch = films.Search;
-          console.log(this.filmsSearch);
         });
       }
     });
@@ -51,6 +52,7 @@ export class FilmComponent implements OnInit, OnDestroy {
     } else {
       this.store.SaveFilms([event.option.value]);
     }
+    this.stateCtrl.setValue('');
   }
 
   ngOnDestroy() {

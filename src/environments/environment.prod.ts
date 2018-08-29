@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://www.omdbapi.com/',
+  apiUrl: 'https://www.omdbapi.com/',
   apiKey: 'ff000a85',
   apiGetOneFilm: '?i=',
   apiGetMultyFilms: '?s=',

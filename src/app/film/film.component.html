@@ -2,8 +2,8 @@
 
 <section class="search-area">
   <mat-form-field class="search-field">
-    <input type="text" placeholder="Введите название фильма..." aria-label="Number" matInput [matAutocomplete]="auto"
-           (input)="inputChange($event)">
+    <input type="text" placeholder="Введите название фильма..."  matInput [matAutocomplete]="auto"
+           (input)="inputChange($event)" [formControl]="stateCtrl">
     <mat-icon matSuffix color="primary">search</mat-icon>
     <mat-autocomplete #auto="matAutocomplete" (optionSelected)="filmSelected($event)">
       <mat-option *ngFor="let film of filmsSearch" [value]="film" class="films-drop-list">
