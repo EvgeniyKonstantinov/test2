@@ -3,7 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'http://www.omdbapi.com/',
+  apiKey: 'ff000a85',
+  apiGetOneFilm: '?i=',
+  apiGetMultyFilms: '?s=',
+  localStorageKey: 'films_store'
 };
 
 /*

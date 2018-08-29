@@ -1,0 +1,28 @@
+<h1>КИНО ПОИСК</h1>
+
+<section class="search-area">
+  <mat-form-field class="search-field">
+    <input type="text" placeholder="Введите название фильма..." aria-label="Number" matInput [matAutocomplete]="auto"
+           (input)="inputChange($event)">
+    <mat-icon matSuffix color="primary">search</mat-icon>
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="filmSelected($event)">
+      <mat-option *ngFor="let film of filmsSearch" [value]="film" class="films-drop-list">
+        <img class="example-option-img" aria-hidden [src]="film.Poster" height="25">
+        {{film.Title}}
+        <mat-icon>add_box</mat-icon>
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</section>
+
+<section class="films_area">
+  <div *ngFor="let film of films" class="film">
+    <img [src]="film.Poster" alt="">
+    <div class="info">
+      <h3 class="title">{{film.Title}}</h3>
+      <span class="genre">{{film.Type}}</span>
+      <p class="year">Год: {{film.Year}}</p>
+      <button  mat-raised-button [routerLink]="['/film-detail', film.imdbID]">Подробнее</button>
+    </div>
+  </div>
+</section>

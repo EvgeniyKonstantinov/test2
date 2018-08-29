@@ -1,0 +1,37 @@
+:host{
+  h2{
+    text-align: center;
+  }
+  .mat-spinner{
+    position: absolute;
+    bottom: 2rem;
+    right: 3rem;
+  }
+  .mat-card{
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    .area_img{
+      width: 40%;
+      margin-top: -24px;
+      margin-left: -24px;
+      margin-bottom: -28px;
+      img{
+        width: 100%;
+      }
+    }
+    .area_info{
+      width: 60%;
+      margin-left: 2rem;
+      display: flex;
+      flex-direction: column;
+      p{
+        margin-top: 0;
+      }
+      button{
+        margin-top: auto;
+        margin-left: auto;
+      }
+    }
+  }
+}
